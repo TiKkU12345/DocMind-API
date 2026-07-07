@@ -1,0 +1,16 @@
+docmind/
+│
+├── app/
+│   ├── main.py
+│   ├── api/
+│   ├── core/
+│   ├── services/
+│
+├── data/
+│   ├── raw_docs/
+│
+├── tests/
+│
+├── requirements.txt
+├── .env
+└── README.md

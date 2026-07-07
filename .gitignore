@@ -1,0 +1,7 @@
+.env
+venv/
+__pycache__/
+data/vector_index.faiss
+data/vector_meta.pkl
+data/raw_docs/
+*.pyc
