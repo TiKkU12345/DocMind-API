@@ -29,11 +29,10 @@ async def upload_document(file: UploadFile = File(...)):
     with open(file_path, "wb") as f:
         f.write(await file.read())
 
-    if file.filename.endswith(".pdf"):
+    if file.filename.lower().endswith(".pdf"):
         text = extract_text_from_pdf(file_path)
     else:
-        text = file_path.read_text(encoding="utf-8")
-
+        text = file_path.read_text(encoding="utf-8", errors="ignore")
     if not text.strip():
         raise HTTPException(status_code=400, detail="No text found in the document")
 
