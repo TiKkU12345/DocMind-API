@@ -1,7 +1,7 @@
 import streamlit as st
 import requests
 
-API_BASE = "docmind-api-production.up.railway.app"
+API_BASE = "https://docmind-api-production.up.railway.app"
 
 st.set_page_config(
     page_title="DocMind",
