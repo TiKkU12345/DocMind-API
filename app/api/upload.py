@@ -21,7 +21,7 @@ def extract_text_from_pdf(file_path: Path) -> str:
 
 @router.post("/upload")
 async def upload_document(file: UploadFile = File(...)):
-    if not file.filename.endswith((".pdf", ".txt")):
+    if not file.filename.lower().endswith((".pdf", ".txt")):
         raise HTTPException(status_code=400, detail="Only PDF and TXT files are allowed")
 
     file_path = UPLOAD_DIR / file.filename
