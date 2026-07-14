@@ -15,7 +15,7 @@ def save_to_vector_store(embeddings: np.ndarray, chunks: list[str]):
         with open(META_PATH, "rb") as f:
             metadata = pickle.load(f)
     else:
-        index = faiss.IndexFlatL2(dimension)
+        index = faiss.IndexFlatIP(dimension)
         metadata = []
 
     index.add(embeddings_np)

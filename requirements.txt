@@ -7,3 +7,5 @@ sentence-transformers
 faiss-cpu
 numpy
 groq
+streamlit
+requests

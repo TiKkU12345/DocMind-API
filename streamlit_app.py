@@ -81,6 +81,13 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
+if st.button("🗑️ Clear Index", type="secondary"):
+    import os
+    for f in ["data/vector_index.faiss", "data/vector_meta.pkl"]:
+        if os.path.exists(f):
+            os.remove(f)
+    st.success("Index cleared.")
+
 # Sidebar
 with st.sidebar:
     st.markdown("### 🧠 DocMind")
@@ -165,4 +172,4 @@ if st.button("Ask"):
                     st.error(f"Error: {response.json().get('detail', 'Something went wrong')}")
 
             except Exception:
-                st.error("Backend not reachable. Make sure uvicorn is running.")
+                st.error("Backend not reachable. Make sure uvicorn is running.")    
